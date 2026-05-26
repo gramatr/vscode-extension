@@ -1,0 +1,65 @@
+name: Publish VS Code Extension
+
+on:
+  release:
+    types: [published]
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install --no-package-lock
+
+      - name: Install publishing tools
+        run: npm install --no-save @vscode/vsce ovsx
+
+      - name: Build extension
+        run: npm run build
+
+      - name: Package extension (.vsix)
+        run: npx vsce package --no-dependencies
+
+      - name: Upload .vsix artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: gramatr-vscode-vsix
+          path: '*.vsix'
+
+      - name: Publish to VS Code Marketplace
+        if: env.VSCE_PAT != ''
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: npx vsce publish --no-dependencies --pat "$VSCE_PAT"
+
+      - name: Skip VS Code Marketplace publish (no VSCE_PAT)
+        if: env.VSCE_PAT == ''
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: echo "VSCE_PAT secret not set — skipping VS Code Marketplace publish."
+
+      - name: Publish to Open VSX
+        if: env.OVSX_PAT != ''
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: npx ovsx publish --pat "$OVSX_PAT" *.vsix
+
+      - name: Skip Open VSX publish (no OVSX_PAT)
+        if: env.OVSX_PAT == ''
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: echo "OVSX_PAT secret not set — skipping Open VSX publish."

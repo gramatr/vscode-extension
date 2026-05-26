@@ -1,0 +1,202 @@
+{
+  "name": "gramatr-vscode",
+  "displayName": "gramatr — Intelligent AI Routing",
+  "description": "Pre-classifies every AI request to save tokens and improve response quality. Decision routing for Copilot.",
+  "version": "0.20.83",
+  "publisher": "gramatr",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gramatr/vscode-extension"
+  },
+  "homepage": "https://gramatr.com",
+  "bugs": {
+    "url": "https://github.com/gramatr/vscode-extension/issues"
+  },
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "keywords": [
+    "ai",
+    "copilot",
+    "routing",
+    "mcp",
+    "gramatr",
+    "developer-tools"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onChatParticipant:gramatr.participant"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "gramatr.participant",
+        "name": "gramatr",
+        "fullName": "gramatr Agent",
+        "description": "Canonical gramatr workflow with authenticated routing, session continuity, and feedback loops.",
+        "isSticky": true,
+        "commands": [
+          {
+            "name": "classify",
+            "description": "Dry-run classification without executing"
+          },
+          {
+            "name": "status",
+            "description": "Show session status and classifier metrics"
+          },
+          {
+            "name": "mcp-tools",
+            "description": "Show the main gramatr MCP tools and when to use them"
+          },
+          {
+            "name": "rate",
+            "description": "Submit an explicit 1-10 rating for the last classified response"
+          },
+          {
+            "name": "handoff",
+            "description": "Load or save a session handoff for continuity"
+          },
+          {
+            "name": "clear",
+            "description": "Reset session state"
+          }
+        ]
+      }
+    ],
+    "configuration": {
+      "title": "gramatr",
+      "properties": {
+        "gramatr.serverUrl": {
+          "type": "string",
+          "default": "https://api.gramatr.com",
+          "description": "gramatr server URL"
+        },
+        "gramatr.dashboardUrl": {
+          "type": "string",
+          "default": "",
+          "description": "Dashboard URL used by Connect Account. Leave empty to derive it from gramatr.serverUrl."
+        },
+        "gramatr.token": {
+          "type": "string",
+          "default": "",
+          "description": "Legacy auth token fallback. Prefer secure storage via the Connect Account or Set API Key commands."
+        },
+        "gramatr.timeout": {
+          "type": "number",
+          "default": 15000,
+          "description": "Classification timeout in ms."
+        },
+        "gramatr.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable enrichment"
+        },
+        "gramatr.showClassification": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show classification summary in chat"
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "gramatr-sidebar",
+          "title": "gramatr",
+          "icon": "assets/gramatr-logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "gramatr-sidebar": [
+        {
+          "id": "gramatr.sessionView",
+          "name": "Session"
+        },
+        {
+          "id": "gramatr.metricsView",
+          "name": "Metrics"
+        },
+        {
+          "id": "gramatr.activityView",
+          "name": "Activity"
+        },
+        {
+          "id": "gramatr.entitiesView",
+          "name": "Entities"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "gramatr.toggleEnrichment",
+        "title": "gramatr: Toggle Enrichment"
+      },
+      {
+        "command": "gramatr.resetSession",
+        "title": "gramatr: Reset Session"
+      },
+      {
+        "command": "gramatr.connectAccount",
+        "title": "gramatr: Connect Account"
+      },
+      {
+        "command": "gramatr.setApiKey",
+        "title": "gramatr: Set API Key"
+      },
+      {
+        "command": "gramatr.clearAuth",
+        "title": "gramatr: Clear Stored API Key"
+      },
+      {
+        "command": "gramatr.openDashboard",
+        "title": "gramatr: Open Dashboard"
+      },
+      {
+        "command": "gramatr.showDashboard",
+        "title": "gramatr: Show Dashboard"
+      },
+      {
+        "command": "gramatr.startAgentSession",
+        "title": "gramatr: Start Agent Session"
+      },
+      {
+        "command": "gramatr.refreshEntities",
+        "title": "gramatr: Refresh Entities"
+      },
+      {
+        "command": "gramatr.searchEntities",
+        "title": "gramatr: Search Entities"
+      },
+      {
+        "command": "gramatr.clearActivity",
+        "title": "gramatr: Clear Activity Trace"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "lint": "pnpm exec biome lint --files-ignore-unknown=true package.json src test esbuild.config.mjs tsconfig.json vitest.config.ts",
+    "watch": "node esbuild.config.mjs --watch",
+    "test": "vitest run",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "@gramatr/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.102.0",
+    "@vitest/coverage-v8": "^4.0.18",
+    "@vscode/test-electron": "^2.5.0",
+    "@vscode/vsce": "^3.6.2",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.0.18"
+  }
+}

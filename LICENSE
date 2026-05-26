@@ -1,0 +1,130 @@
+grāmatr License v1.0
+
+Copyright (c) 2025-2026 gramatr, LLC. All rights reserved.
+
+1. License grant
+
+Subject to the terms of this license, gramatr, LLC grants you a limited,
+revocable, non-exclusive, non-transferable, non-sublicensable license to install
+and use the grāmatr client software solely as a client for authorized grāmatr
+services.
+
+2. Permitted use
+
+You may:
+- install and use the client software for personal or internal business use;
+- connect the software to grāmatr-hosted services or other grāmatr-authorized
+  service endpoints;
+- make copies only as necessary for backup, installation, and normal use.
+
+3. Restrictions
+
+You may not:
+- sell, sublicense, rent, lease, distribute, publish, or otherwise make the
+  software available to third parties as a standalone product;
+- modify, create derivative works of, reverse engineer, decompile, or
+  disassemble the software, except (i) to the limited extent such restriction
+  is prohibited by applicable law, and (ii) for the purposes expressly
+  permitted by 17 U.S.C. § 1201(f) (interoperability) and § 1201(g)
+  (encryption research);
+- use the software to access or operate an unauthorized competing hosted
+  service based on grāmatr technology;
+- remove or alter any proprietary notices, trademarks, or attribution;
+- use the software in violation of applicable law or the grāmatr service terms.
+
+4. Server and service components
+
+The server-side components of this repository (including but not limited to the
+intelligence layer, persistence layer, gateway, and MCP server) are proprietary
+and confidential to gramatr, LLC. No license is granted for hosting, deploying,
+or operating the server components outside of infrastructure authorized by
+gramatr, LLC.
+
+5. Service dependency
+
+The client software is intended to be used with authenticated grāmatr backend
+services. Access to those services may require an account, API key, accepted
+terms, and an active subscription or other authorization. gramatr, LLC may
+change, suspend, or discontinue service access in accordance with applicable
+service terms.
+
+6. Ownership
+
+The software is licensed, not sold. gramatr, LLC and its licensors retain all
+right, title, and interest in and to the software, including all intellectual
+property rights.
+
+7. Updates
+
+gramatr, LLC may provide updates, patches, or new versions under this same
+license or under updated license terms. Continued use of an updated version
+constitutes acceptance of the updated terms if they are presented to you.
+
+8. Termination
+
+This license terminates automatically if you violate these terms. Upon
+termination, you must stop using the software and delete all copies in your
+possession or control.
+
+9. DISCLAIMER OF WARRANTIES — READ CAREFULLY
+
+This section disclaims warranties to the maximum extent permitted by applicable
+law, including Mo. Rev. Stat. § 400.2-316. Read it carefully.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTIES OF ANY
+KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING IMPLIED WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT,
+TO THE MAXIMUM EXTENT PERMITTED BY LAW.
+
+10. Limitation of liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, GRAMATR, LLC WILL NOT BE LIABLE FOR ANY
+INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES,
+OR FOR ANY LOSS OF DATA, REVENUE, PROFITS, GOODWILL, OR BUSINESS INTERRUPTION,
+ARISING OUT OF OR RELATED TO THE SOFTWARE OR ITS USE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+11. Governing terms
+
+Use of the grāmatr backend service is governed separately by the gramatr, LLC
+Terms of Service (https://gramatr.com/terms/) and Privacy Policy
+(https://gramatr.com/privacy/). If there is a conflict between this license
+and the service terms with respect to backend service use, the service terms
+control for backend access and service behavior.
+
+12. Trademarks
+
+"grāmatr", "gramatr", and the grāmatr logo are trademarks of gramatr, LLC. All
+other product names, logos, and brands are the property of their respective
+owners. Nothing in this license grants you any right to use those marks except
+as required for accurate attribution permitted by applicable law.
+
+13. Governing law and venue
+
+This license is governed by and construed in accordance with the laws of the
+State of Missouri, without regard to its conflict-of-law principles. The
+exclusive venue for any dispute arising under or relating to this license shall
+be the state and federal courts located in St. Louis County, Missouri, and the
+parties consent to the personal jurisdiction of those courts.
+
+14. Severability
+
+If any provision of this license is held to be invalid, illegal, or
+unenforceable by a court of competent jurisdiction, that provision shall be
+enforced to the maximum extent permissible and the remaining provisions shall
+continue in full force and effect.
+
+15. Consumer-rights savings
+
+Nothing in this license waives or limits any non-waivable right under the
+Missouri Merchandising Practices Act (Mo. Rev. Stat. §§ 407.010 et seq.) or
+analogous consumer-protection statutes of the user's state of residence. Where
+a provision of this license is unenforceable against a consumer under such
+statutes, that provision shall be read down to the minimum extent necessary
+for enforceability and the remainder of this license shall remain in effect.
+
+16. Notice and contact
+
+Notices to gramatr, LLC under this license may be sent to legal@gramatr.com.
+gramatr, LLC may give notice to you by email to the address associated with
+your account or by posting in the grāmatr product surface.
