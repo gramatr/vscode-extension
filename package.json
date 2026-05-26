@@ -2,6 +2,7 @@
   "name": "gramatr-vscode",
   "displayName": "gramatr — Intelligent AI Routing",
   "description": "Pre-classifies every AI request to save tokens and improve response quality. Decision routing for Copilot.",
+  "icon": "assets/icon.png",
   "version": "0.20.83",
   "publisher": "gramatr",
   "license": "SEE LICENSE IN LICENSE",
